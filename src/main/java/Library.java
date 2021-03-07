@@ -1,11 +1,20 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Library {
 
     static HashMap<String, Boolean> loginUsers = new HashMap<>();
     static HashMap<String, String> Users = new HashMap<>();
     static ArrayList<Book> BooksList = new ArrayList<>();
+
+    public static void testBooks() {
+        Book bok = new Book("The Midnight Library: A Novel", "Matt Haig ", "0525559477987", "Haig2020");
+        Book bk = new Book("The Paris Library", "Janet Skeslien Charles", "9781982134198", "Charles2002");
+        BooksList.add(bok);
+        BooksList.add(bk);
+    }
+
 
     public static HashMap<String, String> testUsers() {
         Users.put("Aya_Abu3li", "123456");
@@ -68,5 +77,61 @@ public class Library {
             System.out.println("Please login to add book !");
             return false;
         }
+    }
+    public static Boolean SearchByTitle(String Title){
+        ArrayList<Book> ByTitle=new ArrayList<>();
+        Library.testBooks();
+        for (Book book : BooksList)
+            if (book.getTitle().toLowerCase().contains(Title.toLowerCase()))
+                ByTitle.add(book);
+        if(ByTitle.isEmpty()){
+            System.out.println("There is no book found");
+            return false;
+        }
+        printfun(ByTitle);
+        return true;
+
+    }
+    public static Boolean SearchByISBN(String ISBN){
+        ArrayList<Book> ByISBN=new ArrayList<>();
+        Library.testBooks();
+        for (Book book : BooksList)
+            if (book.getISBN().toLowerCase().equals(ISBN.toLowerCase()))
+                ByISBN.add(book);
+        if(ByISBN.isEmpty()){
+            System.out.println("There is no book found");
+            return false;
+        }
+        printfun(ByISBN);
+        return true;
+
+    }
+    public static Boolean SearchByAuthor(String Author){
+        ArrayList<Book> ByAuthor=new ArrayList<>();
+        Library.testBooks();
+        for (Book book : BooksList)
+            if (book.getAuthor().toLowerCase().contains(Author.toLowerCase()))
+                ByAuthor.add(book);
+        if(ByAuthor.isEmpty()){
+            System.out.println("There is no book found");
+            return false;
+        }
+        printfun(ByAuthor);
+        return true;
+
+    }
+    public static void printfun(List<Book> printList){
+
+        System.out.println("------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%10s %40s %40s %30s", "Book Title", "Book Author", "Book ISBN", "Book Signature");
+        System.out.println();
+        System.out.println("------------------------------------------------------------------------------------------------------------------");
+        for(Book book: printList){
+            System.out.format("%10s %30s %35s %25s",
+                    book.getTitle(), book.getAuthor(), book.getISBN(), book.getSignature());
+            System.out.println();
+        }
+        System.out.println("------------------------------------------------------------------------------------------------------------------");
+
     }
 }
