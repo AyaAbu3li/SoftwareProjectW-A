@@ -61,23 +61,16 @@ public class Library {
         }
     }
 
-    public static boolean onlyDigits(String str, int n)
-    {
+    public static boolean onlyDigits(String str, int n) {
         if(n!=10) return false;
-        // Traverse the string from
-        // start to end
+        int sum = 0;
         for (int i = 0; i < n; i++) {
-
-            // Check if character is
-            // digit from 0-9
-            // then return true
-            // else false
-            if (str.charAt(i) >= '0' && str.charAt(i) <= '9')
-                return true;
-
-            else return false;
+            int digit = str.charAt(i) - '0';
+            if (0 > digit || 9 < digit)
+                return false;
+            sum += (digit * (10 - i));
         }
-        return false;
+        return (sum % 11 == 0);
     }
 
     public static boolean Add_book(String username, String title, String author, String ISBN, String signature) {
