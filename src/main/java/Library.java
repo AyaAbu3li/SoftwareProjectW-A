@@ -61,23 +61,40 @@ public class Library {
         }
     }
 
+    public static boolean onlyDigits(String str, int n) {
+        if(n!=10) return false;
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            int digit = str.charAt(i) - '0';
+            if (0 > digit || 9 < digit)
+                return false;
+            sum += (digit * (10 - i));
+        }
+        return (sum % 11 == 0);
+    }
+
     public static boolean Add_book(String username, String title, String author, String ISBN, String signature) {
         if (isLogin(username)) {
-            for (Book value : BooksList) {
-                if (value.getISBN().equals(ISBN)) {
-                    System.out.println("this book is already existing");
-                    return false;
+            boolean bool= onlyDigits(ISBN,ISBN.length());
+            if(bool){
+                for (Book value : BooksList) {
+                    if (value.getISBN().equals(ISBN)) {
+                        System.out.println("this book is already existing");
+                        return false;
+                    }
                 }
-            }
-            Book book = new Book(title, author, ISBN, signature);
-            BooksList.add(book);
-            System.out.println("the book added successfully");
-            return true;
+                Book book = new Book(title, author, ISBN, signature);
+                BooksList.add(book);
+                System.out.println("the book added successfully");
+                return true;
+            } else  System.out.println("the ISBN incorrect");
         } else {
             System.out.println("Please login to add book !");
             return false;
         }
+        return false;
     }
+
     public static Boolean SearchByTitle(String Title){
         ArrayList<Book> ByTitle=new ArrayList<>();
         Library.testBooks();
