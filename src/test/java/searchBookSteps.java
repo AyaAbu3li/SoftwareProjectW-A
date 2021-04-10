@@ -20,7 +20,6 @@ public class searchBookSteps {
         Book book = new Book(list.get(1), list.get(2), list.get(3), list.get(4));
         arr.add(book);
     }
-//    ***********************************************************************************************
 
     @When("user OR administrator search about book by ISBN {string}")
     public void user_OR_administrator_search_about_book_by_isbn(String ISBN) {
