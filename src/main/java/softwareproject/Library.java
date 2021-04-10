@@ -11,9 +11,9 @@ public class Library {
     static Logger logger = Logger.getLogger(Library.class.getName());
     static String s="There is no book found";
 
-    static HashMap<String, Boolean> loginUsers = new HashMap();
-    static HashMap<String, String> users = new HashMap();
-    static ArrayList<Book> bookList = new ArrayList();
+    static HashMap<String, Boolean> loginUsers = new HashMap<>();
+    static HashMap<String, String> users = new HashMap<>();
+    static ArrayList<Book> bookList = new ArrayList<>();
 
     private Library() {
     }
@@ -107,7 +107,7 @@ public class Library {
     }
 
     public static Boolean searchByTitle(String title){
-        ArrayList<Book> byTitle=new ArrayList();
+        ArrayList<Book> byTitle=new ArrayList<>();
         Library.testBooks();
         for (Book book : bookList)
             if (book.getTitle().toLowerCase().contains(title.toLowerCase()))
@@ -120,7 +120,7 @@ public class Library {
         return true;
     }
     public static Boolean searchByISBN(String isbn){
-        ArrayList<Book> byISBN=new ArrayList();
+        ArrayList<Book> byISBN=new ArrayList<>();
         Library.testBooks();
         for (Book book : bookList)
             if (book.getISBN().equalsIgnoreCase(isbn.toLowerCase()))
@@ -133,7 +133,7 @@ public class Library {
         return true;
     }
     public static Boolean searchByAuthor(String author){
-        ArrayList<Book> byAuthor=new ArrayList();
+        ArrayList<Book> byAuthor=new ArrayList<>();
         Library.testBooks();
         for (Book book : bookList)
             if (book.getAuthor().toLowerCase().contains(author.toLowerCase()))

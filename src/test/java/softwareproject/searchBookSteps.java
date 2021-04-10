@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class searchBookSteps {
 
-    ArrayList<Book> arr = new ArrayList();
+    ArrayList<Book> arr = new ArrayList<>();
     String password,username;
     String searchString;
     boolean flag;

@@ -12,7 +12,7 @@ public class addBookSteps {
 
     String username,password;
     boolean flag,flaag;
-    ArrayList<Book> arr = new ArrayList();
+    ArrayList<Book> arr = new ArrayList<>();
 
     @Given("there is Administrator {string} loggedin with {string}")
     public void there_is_administrator_loggedin(String username,String password) {
