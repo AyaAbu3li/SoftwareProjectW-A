@@ -1,30 +1,30 @@
 public class Book {
 
-    private String Title;
-    private String Author;
-    private String ISBN;
-    private String Signature;
+    private String title;
+    private String author;
+    private String isbn;
+    private String signature;
 
-    public Book(String Title, String Author, String ISBN, String Signature) {
-        this.Title = Title;
-        this.Author = Author;
-        this.ISBN = ISBN;
-        this.Signature = Signature;
+    public Book(String title, String author, String isbn, String signature) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.signature = signature;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public String getISBN() {
-        return ISBN;
+        return isbn;
     }
 
     public String getSignature() {
-        return Signature;
+        return signature;
     }
 }
