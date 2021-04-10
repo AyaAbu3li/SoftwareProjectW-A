@@ -1,3 +1,5 @@
+package softwareproject;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -24,19 +26,19 @@ public class searchBookSteps {
     @When("user OR administrator search about book by ISBN {string}")
     public void user_OR_administrator_search_about_book_by_isbn(String ISBN) {
         Library.testBooks();
-        flag=Library.searchByISBN(ISBN);
+        flag= Library.searchByISBN(ISBN);
     }
 
     @When("user OR administrator search about book by title {string}")
     public void user_OR_administrator_search_about_book_by_title(String title) {
         Library.testBooks();
-        flag=Library.searchByTitle(title);
+        flag= Library.searchByTitle(title);
     }
 
     @When("user OR administrator search about book by author {string}")
     public void user_OR_administrator_search_about_book_by_author(String author) {
         Library.testBooks();
-        flag=Library.searchByAuthor(author);
+        flag= Library.searchByAuthor(author);
     }
 
     @Then("A list of books that matches specifications {string} should be returned and printed on the console")

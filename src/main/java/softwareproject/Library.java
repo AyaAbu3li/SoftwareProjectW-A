@@ -1,3 +1,5 @@
+package softwareproject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,8 +20,8 @@ public class Library {
 
 
     public static void testBooks() {
-        Book bok = new Book("The Midnight Library: A Novel", "Matt Haig ", "0525559477987", "Haig2020");
-        Book bk = new Book("The Paris Library", "Janet Skeslien Charles", "9781982134198", "Charles2002");
+        Book bok = new Book("The Midnight softwareProject.Library: A Novel", "Matt Haig ", "0525559477987", "Haig2020");
+        Book bk = new Book("The Paris softwareProject.Library", "Janet Skeslien Charles", "9781982134198", "Charles2002");
         bookList.add(bok);
         bookList.add(bk);
     }
