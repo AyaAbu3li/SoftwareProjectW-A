@@ -9,6 +9,7 @@ Feature: Admin login
       | username      | password | Status               |
       | Aya_Abu3li    | 123456   | Login Successfully   |
       | Waseem_ghazal | 12356    | Login Successfully   |
+      | Waseem_ghazal | 12356    | Login failed         |
 
   Scenario Outline: Administrator has the wrong password
     Given there is an user in login page
