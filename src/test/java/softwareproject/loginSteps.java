@@ -28,7 +28,7 @@ public class loginSteps {
     @Then("User should get logged in and Message {string} printed on the console Login Successfully")
     public void user_should_get_logged_in_and_message_printed_on_the_console_login_successfully(String Message) {
         assertEquals(pass, password);
-        Map<String,Boolean> User = Library.testloginUsers();
+//        Map<String,Boolean> User = Library.testloginUsers();
         Library.login(username,password);
         System.out.println(Message);
 
