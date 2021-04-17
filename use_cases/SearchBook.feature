@@ -6,7 +6,7 @@ Feature: Search about suitable book
       | Property    | value                            |
       | title       | Test-Drivenest Driven Development|
       | author      | Kent Beck                        |
-      | ISBN        | 9780321146533                    |
+      | ISBN        | 1476765995                       |
       | Signature   | Beck2002                         |
 
     And the following book is a data in the system
@@ -14,7 +14,7 @@ Feature: Search about suitable book
       | Property    | value                            |
       | title       | The Paris Library                |
       | author      | Janet Skeslien Charles           |
-      | ISBN        | 9781982134198                    |
+      | ISBN        | 1250195721                       |
       | Signature   | Charles2002                      |
 
 
@@ -23,8 +23,9 @@ Feature: Search about suitable book
     Then A list of books that matches specifications "<result>" should be returned and printed on the console
 
     Examples:
-      | title             | result |
-      | The Paris Library | found  |
+      | title             | result   |
+      | The Paris Library | found    |
+      |    Book           | not found|
 
 
   Scenario Outline: Search about book by ISBN
@@ -32,8 +33,9 @@ Feature: Search about suitable book
     Then A list of books that matches specifications "<result>" should be returned and printed on the console
 
     Examples:
-      | ISBN              | result |
-      | 9781982134198     | found  |
+      | ISBN              | result   |
+      | 1250195721        | found    |
+      | 1250317630        | not found|
 
   Scenario Outline: Search book by author
     When user OR administrator search about book by author "<author>"
@@ -50,7 +52,7 @@ Feature: Search about suitable book
     Then A list of books that matches specifications "<result>" should be returned and printed on the console
     Examples:
       | title        | result     |
-      | Midnight      | found      |
+      | Midnight     | found      |
       | Development  | not found  |
 
 
