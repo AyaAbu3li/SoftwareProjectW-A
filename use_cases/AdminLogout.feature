@@ -7,4 +7,4 @@ Feature: Administrator logs out
     Examples:
       | username      | password |
       | Aya_Abu3li    | 123456   |
-      | Waseem_ghazal | 12356    |
+      | Waseem_ghazal | 121356    |
